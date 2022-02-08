@@ -1,31 +1,44 @@
 import "./App.css";
+import { Card } from "./components/Card";
+import { Header } from "./components/Header";
+
+const cardsInfo = [
+  {
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Zjaph4YOs8sDt_p8CsgsE9rohpOLjIrjOQ&usqp=CAU",
+    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.`,
+  },
+  {
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Zjaph4YOs8sDt_p8CsgsE9rohpOLjIrjOQ&usqp=CAU",
+    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.`,
+  },
+  {
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Zjaph4YOs8sDt_p8CsgsE9rohpOLjIrjOQ&usqp=CAU",
+    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.`,
+  },
+  {
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Zjaph4YOs8sDt_p8CsgsE9rohpOLjIrjOQ&usqp=CAU",
+    description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.`,
+  },
+];
 
 function App() {
   return (
     <div>
-      <header>
-        <h1 className="title">Luis Diasss</h1>
-        <h2 className="title">Full Stack Developer</h2>
-      </header>
-
       <main>
+        <Header title="Luis Diasss" subtitle="Full stack web developer" />
         <section>
           <h3 className="title">My Projects</h3>
 
           <div className="projectCards">
-            <div className="card">
-              <img
-                src="https://dwglogo.com/wp-content/uploads/2017/09/1460px-React_logo.png"
-                alt=""
-              />
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Excepturi, error quas. Cumque enim a illum illo ut! Optio
-                molestiae animi magni nisi eos atque, illo fuga fugiat.
-                Obcaecati, tenetur quo?
-              </p>
-              <a href="https://reactjs.org/">REACT</a>
-            </div>
+            {cardsInfo.map((each) => {
+              return (
+                <Card imageUrl={each.imageUrl} description={each.description} />
+              );
+            })}
           </div>
         </section>
       </main>
