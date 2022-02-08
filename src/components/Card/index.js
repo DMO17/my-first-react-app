@@ -1,3 +1,5 @@
+import "./Card.css";
+
 export const Card = ({ imageUrl, description }) => {
   return (
     <div className="card">

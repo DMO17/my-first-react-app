@@ -1,6 +1,6 @@
 import "./App.css";
-import { Card } from "./components/Card";
 import { Header } from "./components/Header";
+import { Projects } from "./components/Projects";
 
 const cardsInfo = [
   {
@@ -30,17 +30,7 @@ function App() {
     <div>
       <main>
         <Header title="Luis Diasss" subtitle="Full stack web developer" />
-        <section>
-          <h3 className="title">My Projects</h3>
-
-          <div className="projectCards">
-            {cardsInfo.map((each) => {
-              return (
-                <Card imageUrl={each.imageUrl} description={each.description} />
-              );
-            })}
-          </div>
-        </section>
+        <Projects cardsInfo={cardsInfo} />
       </main>
     </div>
   );
